@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b132b"><link rel="manifest" href="manifest.json">
+  <title>ElectroMart CCC Lab</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header><p class="eyebrow">FIN 4150 · Chapter 14</p><h1>ElectroMart Cash Conversion Cycle</h1><p class="sub">Explore how inventory, collection, and supplier-payment decisions change cash needs.</p></header>
+    <section class="card controls"><div class="button-row"><button id="beforeBtn">Set to Before</button><button id="afterBtn" class="primary">Set to After</button></div>
+      <div class="sliders">
+        <label>DIO <output id="dioOut"></output><input id="dio" type="range" min="0" max="120" step="0.01"></label>
+        <label>DSO <output id="dsoOut"></output><input id="dso" type="range" min="0" max="120" step="0.01"></label>
+        <label>DPO <output id="dpoOut"></output><input id="dpo" type="range" min="0" max="120" step="0.01"></label>
+      </div>
+    </section>
+    <section class="grid metrics"><div class="metric highlight"><span>Cash conversion cycle</span><strong id="ccc"></strong><small>days</small></div><div class="metric"><span>Cash freed vs. Before</span><strong id="cashFreed"></strong><small>inventory + receivables + payables</small></div><div class="metric"><span>Interest saved</span><strong id="interestSaved"></strong><small>per year at the bank rate</small></div><div class="metric"><span>Supplier timing</span><strong id="lateDays"></strong><small>days past net 30</small></div></section>
+    <section class="card"><h2>Implied balances</h2><div class="table"><div><span>Inventory</span><b id="inventory"></b></div><div><span>Accounts receivable</span><b id="receivables"></b></div><div><span>Accounts payable</span><b id="payables"></b></div><div><span>Annual cost of skipping 2% discount</span><b id="discountCost"></b></div></div></section>
+    <section class="card"><h2>Before vs. After worksheet check</h2><div class="table" id="comparison"></div></section>
+    <footer>Data source: data/electromart.csv and data/assumptions.csv · Values calculate without intermediate rounding.</footer>
+  </main><script src="app.js"></script>
+</body></html>
